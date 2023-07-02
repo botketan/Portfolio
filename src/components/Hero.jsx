@@ -1,9 +1,22 @@
 import { motion } from "framer-motion";
-
+import React, {useState, useEffect} from 'react';
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const changeWidth = () => {
+      setScreenWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', changeWidth)
+    return () => {
+        window.removeEventListener('resize', changeWidth)
+    }
+
+  },[])
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
@@ -25,7 +38,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <ComputersCanvas />
+      {(screenWidth > 900)&&(<ComputersCanvas />)}
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
