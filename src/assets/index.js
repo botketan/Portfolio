@@ -33,7 +33,7 @@ import TechboardLogo from "./TechboardLogo.jpg";
 import SWClogo from "./SWClogo.jpg";
 import munlogo from "./munlogo.png";
 import MunWebsite from "./MUN_Website.png";
-import HotShot from "./HotShot.png";
+import HotShot from "./Hotshot.png";
 import InternPortal from "./InternPortal.png";
 
 export {
